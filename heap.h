@@ -29,11 +29,22 @@ struct MinHeap {
     }
 
     int pop(int weightArr[]) {
+        //edge case
+        if (size == 0) {
+            return -1;
+        }
         // TODO: remove and return smallest index
         // Replace root with last element
-
+            //root
+        int min = data[0];
+            //shift up last to root
+        data[0] = data[size - 1];
+            //elements cut down
+        size--;
         //call downheap()
-        return -1; // placeholder
+            //fix positions to keep smallest val at top
+        downheap(0, weightArr);
+        return min;
     }
 
     void upheap(int pos, int weightArr[]) {
