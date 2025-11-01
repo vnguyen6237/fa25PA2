@@ -9,18 +9,30 @@
 using namespace std;
 
 struct MinHeap {
+    //heap storage
     int data[64];
+    //curr elements
     int size;
 
-    MinHeap() { size = 0; }
+    MinHeap() {
+        //starting with an empty heap
+        size = 0;
+    }
 
     void push(int idx, int weightArr[]) {
-        // TODO: insert index at end of heap, restore order using upheap()
+        // TODO:
+        // insert index at end of heap
+        data[size] = idx;
+        //restore order using upheap()
+        upheap(size, weightArr);
+        size++;
     }
 
     int pop(int weightArr[]) {
         // TODO: remove and return smallest index
-        // Replace root with last element, then call downheap()
+        // Replace root with last element
+
+        //call downheap()
         return -1; // placeholder
     }
 
