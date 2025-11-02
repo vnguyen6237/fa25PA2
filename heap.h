@@ -87,6 +87,14 @@ struct MinHeap {
         else if (weightArr[data[r]] < weightArr[data[l]] && weightArr[data[r]] > weightArr[data[min]]) {
             min = r;
         }
+
+        if (min != pos) {
+            int temp = data[pos];
+            data[pos] = data[min];
+            data[min] = temp;
+
+            downheap(min, weightArr);
+        }
     }
 };
 
