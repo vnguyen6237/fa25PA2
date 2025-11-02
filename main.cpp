@@ -137,7 +137,7 @@ void generateCodes(int root, string codes[]) {
         // Record code when a leaf node is reached.
         if (leftArr[index] == -1 && rightArr[index] == -1) {
             char ch = charArr[index];
-            codes[ch - 'a'] = ch;
+            codes[ch - 'a'] = code;
         }
         else{
             // Left edge adds '0', right edge adds '1'.
