@@ -136,8 +136,7 @@ void generateCodes(int root, string codes[]) {
         string code = curr.second;
         // Record code when a leaf node is reached.
         if (leftArr[index] == -1 && rightArr[index] == -1) {
-            char ch = charArr[index];
-            codes[ch - 'a'] = code;
+            codes[charArr[index] - 'a'] = code;
         }
         else{
             // Left edge adds '0', right edge adds '1'.
@@ -156,9 +155,10 @@ void generateCodes(int root, string codes[]) {
 // Step 5: Print table and encoded message
 void encodeMessage(const string& filename, string codes[]) {
     cout << "\nCharacter : Code\n";
-    for (int i = 0; i < 26; ++i) {
-        if (!codes[i].empty())
-            cout << char('a' + i) << " : " << codes[i] << "\n";
+    for (int i = 0; i < MAX_NODES; ++i) {
+        if (leftArr[i] == -1 && rightArr[i] == -1 && charArr[i] != 0) {
+            cout << charArr[i] << " : " << weightArr[i] << "\n";
+        }
     }
 
     cout << "\nEncoded message:\n";
