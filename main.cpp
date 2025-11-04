@@ -129,6 +129,7 @@ void generateCodes(int root, string codes[]) {
     st.push(pair<int,string>(root, ""));
 
     while (!st.empty()){
+        //while stack isn't empty, remove the top
         pair<int, string> curr = st.top();
         st.pop();
 
